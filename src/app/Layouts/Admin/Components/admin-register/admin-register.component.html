@@ -1,0 +1,63 @@
+<nav>
+    <ul>
+        <li>
+          <a [routerLink]="['']">Kilimo Na Pembejeo</a>
+        </li>
+      </ul>
+  </nav>
+    <div class="container">
+        <div class="row justify-content-center">
+             <div class="col-lg-7">
+                <div class="card shadow-lg border-0 rounded-lg mt-5">
+                    <div class="card-header">
+                        <h3 class="text-center font-weight-light my-4">Create Account</h3>
+                    </div>
+                    <div class="card-body">
+                        <form class="example-form" [formGroup]="adminRegisterForm" (ngSubmit)="Register()">
+                            <mat-form-field class="example-part-width" appearance="outline">
+                                <mat-label>First Name</mat-label>
+                                <input matInput formControlName="adminFName">
+                            </mat-form-field>
+    
+                            <mat-form-field class="example-part-width" appearance="outline">
+                                <mat-label>Last Name</mat-label>
+                                <input matInput formControlName="adminLName">
+                            </mat-form-field>
+                            <mat-form-field class="example-full-width" appearance="outline">
+                                <mat-label>Email</mat-label>
+                                <input type="email" matInput formControlName="adminEmail"
+                                    placeholder="Ex. email@example.com">
+                               
+                            </mat-form-field>
+    
+                            <mat-form-field class="example-part-width" appearance="outline">
+                                <mat-label>Enter your password</mat-label>
+                                <input matInput [type]="hide ? 'password' : 'text'" formControlName="adminPassword">
+                                <a mat-icon-button matSuffix (click)="hide =!hide" [attr.aria-label]="'Hide password'"
+                                    [attr.aria-pressed]="hide">
+                                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                </a>
+    
+                            </mat-form-field>
+    
+                            <mat-form-field class="example-part-width" appearance="outline">
+                                <mat-label>Confirm your password</mat-label>
+                                <input matInput [type]="hide ? 'password' : 'text'" formControlName="confirmPassword">
+                                <a mat-icon-button matSuffix (click)="hide =!hide" [attr.aria-label]="'Hide password'"
+                                    [attr.aria-pressed]="hide">
+                                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                </a>
+    
+                            </mat-form-field>
+    
+                            <button mat-raised-button class="login-button" type="submit" [disabled]="adminRegisterForm.invalid" >Register</button>
+    
+                        </form>
+                    </div>
+                    <div class="card-footer text-center py-3">
+                        <div class="small"><a [routerLink]="['/admin-login']">Have an account? Go to login</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,66 @@
+<mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="over">
+        <p *ngIf="showFiller"></p>
+        <button (click)="drawer.toggle()" mat-button>
+            <i class="fas fa-bars"></i>
+        </button>
+        <br>
+
+        <button mat-button [routerLink]="['/admin-login/admin-nav']">Nyumbani</button>
+        <br>
+        <button mat-button [matMenuTriggerFor]="farmers">Wakulima</button>
+        <mat-menu #farmers="matMenu">
+            <button mat-menu-item [routerLink]="['farmers-list']"  >Orodha Ya Wakulima</button>
+            <button mat-menu-item [routerLink]="['register-farmer']" >Sajili Mkulima</button>
+        </mat-menu>
+        <br>
+        <button mat-button [matMenuTriggerFor]="suppliers">Wasambazaji Pembejeo</button>
+        <mat-menu #suppliers="matMenu">
+            <button mat-menu-item [routerLink]="['suppliers-list']"  >Orodha ya Wasambazaji</button>
+            <button mat-menu-item [routerLink]="['register-supplier']" >Sajili Msambazaji</button>
+        </mat-menu>
+        <br>
+        <button mat-button [matMenuTriggerFor]="products"  >Pembejeo</button>
+        <mat-menu #products="matMenu">
+            <button mat-menu-item [routerLink]="['full-products-list']"  >Orodha Ya Pembejeo</button>
+        </mat-menu>
+      
+
+    </mat-drawer>
+
+    <div class="example-sidenav-content">
+        <div class="navbar">
+            <a>
+                <button type="button" mat-button (click)="drawer.toggle()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </a>
+            <h2>Kilimo Na Pembejeo</h2>
+            <a>
+                <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                    <mat-icon>more_vert</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item [routerLink]="['admin-profile']">
+                        <mat-icon>account_circle</mat-icon>
+                        <span>Akaunti</span>
+                    </button>
+                    <button mat-menu-item disabled>
+                        <mat-icon>chat</mat-icon>
+                        <span>Maoni</span>
+                    </button>
+                    <button mat-menu-item [routerLink]="['/admin-login']">
+                        <mat-icon>power</mat-icon>
+                        <span>Toka</span>
+                    </button>
+                </mat-menu>
+            </a>
+        </div>
+
+        <div class="main">
+            <router-outlet></router-outlet>
+        </div>
+
+    </div>
+
+</mat-drawer-container>

@@ -1,0 +1,47 @@
+.example-container {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .example-sidenav-content {
+    width: 100%;
+    
+    
+  }
+  
+  .example-sidenav {
+    padding: 20px;
+  }
+
+  /* The navigation bar */
+.navbar {
+  overflow: hidden;
+  background-color: rgb(231, 73, 126);
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+}
+
+/* Links inside the navbar */
+.navbar a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+}
+
+/* Change background on mouse-over */
+.navbar a:hover {
+  color: whitesmoke;
+}
+
+/* Main content */
+.main {
+  margin-top: 30px; /* Add a top margin to avoid content overlay */
+}
+.top{
+  background-color: rgb(231, 73, 126);
+  padding: 0px 0px 0px 0px;
+}
+

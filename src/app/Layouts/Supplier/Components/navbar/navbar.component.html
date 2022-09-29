@@ -1,0 +1,61 @@
+<mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="over">
+        <div class="top"  (click)="drawer.toggle()">
+            <span><i class="fas fa-bars"></i> Kilimo</span>  
+        </div>
+       
+        <br>
+
+        <button mat-button [routerLink]="['/supplier-login/nav']">Dashboard</button>
+        <br>
+        <button mat-button [matMenuTriggerFor]="products">Products</button>
+        <mat-menu #products="matMenu">
+            <button mat-menu-item [routerLink]="['products-list']">Products List</button>
+            <button mat-menu-item [routerLink]="['new-product']">Add New Product</button>
+        </mat-menu>
+        <br>
+        <button mat-button [matMenuTriggerFor]="orders">Orders</button>
+        <mat-menu #orders="matMenu">
+            <button mat-menu-item [routerLink]="['pending-orders']">Pending Orders</button>
+        </mat-menu>
+        <br>
+
+
+    </mat-drawer>
+
+    <div class="example-sidenav-content">
+        <div class="navbar">
+            <a>
+                <button type="button" mat-button (click)="drawer.toggle()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </a>
+            <a>Kilimo Na Pembejeo</a>
+            <a>
+                <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                    <mat-icon>more_vert</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item [routerLink]="['profile']">
+                        <mat-icon>account_circle</mat-icon>
+                        <span>Profile</span>
+                    </button>
+                    <button mat-menu-item disabled>
+                        <mat-icon>chat</mat-icon>
+                        <span>Comments</span>
+                    </button>
+                    <button mat-menu-item [routerLink]="['/supplier-login']">
+                        <mat-icon>power</mat-icon>
+                        <span>Log Out</span>
+                    </button>
+                </mat-menu>
+            </a>
+        </div>
+
+        <div class="main">
+            <router-outlet></router-outlet>
+        </div>
+
+    </div>
+
+</mat-drawer-container>

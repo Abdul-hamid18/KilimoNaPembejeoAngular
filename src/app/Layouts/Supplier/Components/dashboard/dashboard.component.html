@@ -1,0 +1,62 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-12">
+            <div class="card shadow-lg border-0 rounded-lg mt-5">
+                <div class="card-header">
+                    <h3 class="text-left font-weight-light my-4">Dashboard</h3>
+                </div>
+                <div class="card-body">
+                    <div class="container-fluid px-4">
+                       
+                        <div class="row">
+                            <div class="col-xl-4 col-md-6">
+                                <div class="card text-white mb-4" id="mycard">
+                                    <div class="card-body">
+                                        <i class="fa-sharp fa-solid fa-list-ol"></i>
+                                        <span style="padding-left:8px ;">Products</span>
+                                        <span style="font-size: larger; float: right;"></span>
+                                    </div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" [routerLink]="['products-list']">View Details</a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-md-6">
+                                <div class="card bg-secondary text-white mb-4">
+                                    <div class="card-body">
+                                        <i class="fa-solid fa-cart-arrow-down"></i>
+                                        <span style="padding-left:8px ;">Pending Orders</span>
+                                        <span style="font-size: larger; float: right;"></span>
+                                    </div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" [routerLink]="['pending-orders']" >View Details</a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-xl-4 col-md-6">
+                                <div class="card bg-info text-white mb-4">
+                                    <div class="card-body">
+                                        <i class="fas fa-comments"></i>
+                                        <span style="padding-left: 8px;">Comments </span>
+                                        <span style="font-size: larger; float: right;">15</span>
+                                    </div>
+                                    
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" >View Details</a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>

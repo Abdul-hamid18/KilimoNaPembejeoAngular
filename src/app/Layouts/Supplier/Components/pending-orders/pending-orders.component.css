@@ -1,0 +1,28 @@
+/* Structure */
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+
+.delete-button{
+  fill: none;
+  border: none;
+  color: red;
+  background: none;
+}
+
+.update-button{
+  fill: none;
+  border: none;
+  color: green;
+  background: none;
+}
+
+
+
+
