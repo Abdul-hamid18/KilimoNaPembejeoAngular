@@ -16,7 +16,7 @@
   /* The navigation bar */
 .navbar {
   overflow: hidden;
-  background-color: rgb(231, 73, 126);
+  background-color: #13375b;
   position: fixed; /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
   width: 100%; /* Full width */
@@ -41,7 +41,14 @@
   margin-top: 30px; /* Add a top margin to avoid content overlay */
 }
 .top{
-  background-color: rgb(231, 73, 126);
-  padding: 0px 0px 0px 0px;
+  align-items: center;
+}
+
+h2{
+  font-family: fantasy;
+  font-size: 30px;
+  color: white;
+  letter-spacing: 8px;
+  
 }
 

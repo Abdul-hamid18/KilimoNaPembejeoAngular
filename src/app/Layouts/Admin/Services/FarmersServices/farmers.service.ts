@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
-const baseUrl="http://localhost:8080/api/v1/farmer";
+const baseUrl= environment.basePath+"farmer";
 
 @Injectable({
   providedIn: 'root'
@@ -19,14 +20,14 @@ export class FarmersService {
     return this.http.post(`${baseUrl}`,data);
   }
 // delete farmer
-  deleteFarmer(farmerId:any){
-    return this.http.delete(`${baseUrl}/${farmerId}`);
+  deleteFarmer(id:any){
+    return this.http.delete(`${baseUrl}/${id}`);
   }
 
   //update farmer
 
-  updateFarmer(farmerId:any,data:any){
-    return this.http.put(`${baseUrl}/${farmerId}`,data);
+  updateFarmer(id:any,data:any){
+    return this.http.put(`${baseUrl}/${id}`,data);
   }
   
 }

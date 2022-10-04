@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -23,6 +24,8 @@ import { PendingOrdersComponent } from './Components/pending-orders/pending-orde
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
+import { UpdateProductComponent } from './Components/update-product/update-product.component';
+import { UpdateProfileComponent } from './Components/update-profile/update-profile.component';
 
 
 @NgModule({
@@ -36,6 +39,8 @@ import { MatMenuModule } from '@angular/material/menu';
     ProfileComponent,
     PendingOrdersComponent,
     SupplierLoginComponent,
+    UpdateProductComponent,
+    UpdateProfileComponent,
   ],
   imports: [
     CommonModule,
@@ -53,6 +58,7 @@ import { MatMenuModule } from '@angular/material/menu';
     MatSidenavModule,
     MatListModule,
     MatMenuModule,
+    FormsModule
   ]
 })
 export class SupplierModule { }

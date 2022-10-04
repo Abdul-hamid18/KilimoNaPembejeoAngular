@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ProfileService } from '../../Services/Profile/profile.service';
 
 @Component({
@@ -9,7 +10,8 @@ import { ProfileService } from '../../Services/Profile/profile.service';
 export class ProfileComponent implements OnInit {
   profile:any;
 
-  constructor(private profileService:ProfileService) { }
+  constructor(private profileService:ProfileService,
+    private router:Router) { }
 
   ngOnInit(): void {
     this.fetchProfile();
@@ -22,5 +24,10 @@ export class ProfileComponent implements OnInit {
       console.log(response)
     });
   }
+
+  public updateProfile(id:number){
+    this.router.navigate(['supplier-login/nav/update-profile',{id}]);
+  
+}
 
 }

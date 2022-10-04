@@ -3,7 +3,9 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import {MatPaginator} from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
+import { Router } from '@angular/router';
 import { ProductService } from 'src/app/Layouts/Supplier/Services/Product/product.service';
+import { Products } from '../../Services/Product/Products';
 
 @Component({
   selector: 'app-product-list',
@@ -13,11 +15,11 @@ import { ProductService } from 'src/app/Layouts/Supplier/Services/Product/produc
 export class ProductsListComponent implements OnInit {
   displayedColumns: string[]=['No.', 'Product Name', 'Product Price', 'Product Description', 'Actions']
   dataSource = new MatTableDataSource();
-  products:any[]=[];
+  products!: Products[]
 
   @ViewChild (MatPaginator) paginator!:MatPaginator;
 
-  constructor(private productSerice:ProductService) { }
+  constructor(private productSerice:ProductService, private router: Router) { }
 
   ngOnInit(): void {
     this.fetchProducts()
@@ -30,7 +32,6 @@ export class ProductsListComponent implements OnInit {
     this.productSerice.getProducts(localStorage.getItem("SuplierId")).subscribe(response=>{
       this.dataSource=new MatTableDataSource(response)
       this.products=response
-
       console.log(this.dataSource)
     });
   }
@@ -52,6 +53,12 @@ export class ProductsListComponent implements OnInit {
       alert("Fail to delete product");
     })
   }
+
+
+  public updateProduct(id:number){
+    this.router.navigate(['supplier-login/nav/update-product',{id}]);
+  
+}
 
 }
 

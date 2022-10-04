@@ -3,31 +3,35 @@
         <div class="col-lg-12">
             <div class="card shadow-lg border-0 rounded-lg mt-5">
                 <div class="card-header">
-                    <h3 class="text-start font-weight-light my-4">Register Product</h3>
+                    <h3 class="text-start font-weight-light my-4">Sajili Pembejeo</h3>
                 </div>
                 <div class="card-body">
                     <form class="example-form" [formGroup]="productForm" (ngSubmit)="saveNewProduct()">
                         <mat-form-field class="example-part-width" appearance="fill">
-                            <mat-label>Product Name</mat-label>
+                            <mat-label>Jina la Pembejeo</mat-label>
                             <input matInput formControlName="productName" >
+                            <mat-error>Tafadhali jaza jina la Pembejeo</mat-error>
                         </mat-form-field>
+                        
 
                         <mat-form-field class="example-part-width" appearance="fill">
-                            <mat-label>Product Price</mat-label>
-                            <input matInput formControlName="productPrice">
+                            <mat-label>Bei ya Pembejeo</mat-label>
+                            <input type="number" matInput formControlName="productPrice">
+                            <mat-error>Tafadhali jaza bei ya Pembejeo (bei iwe mfumo wa nambari tuh!)</mat-error>
                         </mat-form-field>
 
                         <mat-form-field class="example-full-width" appearance="fill">
-                            <mat-label>Product Description</mat-label>
+                            <mat-label>Maelezo ya Pemebejeo</mat-label>
                             <textarea matInput formControlName="productDescr"></textarea>
-                          </mat-form-field>
+                            <mat-error>Tafadhali jaza maelezo ya Pembejeo yako </mat-error>
 
-                        
+                          </mat-form-field>
 
                         <div class="register-button">
                             <button  type="submit" mat-raised-button
-                                color="primary" [disabled]="productForm.invalid">Register</button>
+                                color="primary" [disabled]="productForm.invalid">Sajili</button>
                         </div>
+                        
                     </form>
                 </div>
 

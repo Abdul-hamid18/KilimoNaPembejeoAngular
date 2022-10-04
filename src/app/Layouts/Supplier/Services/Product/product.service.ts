@@ -1,8 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
+import { Products } from './Products';
 
-const baseUrl="http://localhost:8080/api/v1/product";
-const baseUrl2="http://localhost:8080/api/v1/product/supplier";
+const baseUrl=environment.basePath+"product";
+const baseUrl2=baseUrl+"/supplier";
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -20,7 +25,15 @@ export class ProductService {
   }
 
   // delete product
-  deleteProduct(productId:any){
-    return this.http.delete(`${baseUrl}/${productId}`);
+  deleteProduct(id:any){
+    return this.http.delete(`${baseUrl}/${id}`);
+  }
+
+  updateProduct(id:any,product:Products): Observable<Object>{
+    return this.http.put(`${baseUrl}/${id}`,product);
+  }
+
+  getProductById(id:any){
+    return this.http.get<Products>(`${baseUrl}/${id}`)
   }
 }

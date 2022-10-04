@@ -1,0 +1,75 @@
+  <div class="container">
+      <div class="row justify-content-center">
+          <div class="col-lg-12">
+              <div class="card shadow-lg border-0 rounded-lg mt-5">
+                  <div class="card-header">
+                      <h3 class="text-start font-weight-light my-4">Badili Taarifa Za Akaunti</h3>
+                  </div>
+                  <div class="card-body">
+                      <form class="example-form " (ngSubmit)="implementUpdate()" >
+                          <mat-form-field class="example-part-width" appearance="fill">
+                              <mat-label>First Name</mat-label>
+                              <input matInput name="supplierFname" [(ngModel)]="profile.supplierFName" >
+                            </mat-form-field>
+  
+                            <mat-form-field class="example-part-width" appearance="fill">
+                              <mat-label>Last Name</mat-label>
+                              <input name="supplierLname"  matInput [(ngModel)]="profile.supplierLName">
+                            </mat-form-field>
+                            <mat-form-field class="example-part-width" appearance="fill">
+                              <mat-label>Registration</mat-label>
+                              <input matInput name="supplierRegNo"  [(ngModel)]="profile.supplierRegNo">
+                            </mat-form-field>
+                          <mat-form-field class="example-part-width" appearance="fill">
+                              <mat-label>Email</mat-label>
+                              <input type="email" matInput placeholder="Ex. email@example.com"
+                              name="supplierEmail"  [(ngModel)]="profile.supplierEmail">
+                              <mat-error >
+                                Please enter a valid email address
+                              </mat-error>
+                            
+                            </mat-form-field>
+  
+                            <mat-form-field class="example-part-width" appearance="fill">
+                              <mat-label>Address</mat-label>
+                              <input matInput name="supplierAddress"  [(ngModel)]="profile.supplierAddress">
+                            </mat-form-field>
+  
+                            <mat-form-field class="example-part-width" appearance="fill">
+                              <mat-label>Phone Number</mat-label>
+                              <input matInput name="supplierPhoneNo"  [(ngModel)]="profile.supplierPhoneNo">
+                            </mat-form-field>
+  
+                            <mat-form-field class="example-part-width" appearance="fill">
+                              <mat-label>Enter your password</mat-label>
+                              <input matInput [type]="hidepassword ? 'password' : 'text'" 
+                              name="supplierPassword"  [(ngModel)]="profile.supplierPassword">
+                              <a mat-icon-button matSuffix (click)="hidepassword =!hidepassword" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidepassword">
+                                <mat-icon>{{hidepassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+                              </a>
+                    
+                            </mat-form-field>
+
+                            <mat-form-field class="example-part-width" appearance="fill">
+                              <mat-label>Enter your password</mat-label>
+                              <input matInput [type]="hidepassword2 ? 'password' : 'text'" 
+                              name="supplierPassword"  [(ngModel)]="profile.supplierPassword">
+                              <a mat-icon-button matSuffix (click)="hidepassword2 =!hidepassword2" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidepassword2">
+                                <mat-icon>{{hidepassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+                              </a>
+                    
+                            </mat-form-field>
+  
+                            
+  
+                            <button mat-raised-button color="accent" type="submit">Badili</button>
+  
+  
+                      </form>
+                  </div>
+                  
+              </div>
+          </div>
+      </div>
+  </div>
+  

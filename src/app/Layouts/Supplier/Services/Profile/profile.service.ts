@@ -1,7 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
+import { Supplier } from './Supplier';
 
-const baseUrl="http://localhost:8080/api/v1/supplier";
+const baseUrl=environment.basePath+"supplier";
+
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +15,10 @@ export class ProfileService {
   constructor(private http:HttpClient) { }
 
   getProfile(id:any){
-    return this.http.get<any[]>(`${baseUrl}/${id}`);
+    return this.http.get<Supplier>(`${baseUrl}/${id}`);
+  }
+
+  updateProfile(id:any,profile:Supplier): Observable<Object>{
+    return this.http.put(`${baseUrl}/${id}`,profile);
   }
 }

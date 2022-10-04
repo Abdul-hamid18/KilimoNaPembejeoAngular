@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-12">
+            <div class="card shadow-lg border-0 rounded-lg mt-5">
+                <div class="card-header">
+                    <h3 class="text-start font-weight-light my-4">Update Product</h3>
+                </div>
+                <div class="card-body">
+                    <form class="example-form" (ngSubmit)="implementUpdate()" >
+                        <mat-form-field class="example-part-width" appearance="fill">
+                            <mat-label>Product Name</mat-label>
+                            <input matInput name="productName" [(ngModel)]= "product.productName" >
+                        </mat-form-field>
+
+                        <mat-form-field class="example-part-width" appearance="fill">
+                            <mat-label>Product Price</mat-label>
+                            <input matInput name="productPrice"  [(ngModel)]= "product.productPrice">
+                        </mat-form-field>
+
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Product Description</mat-label>
+                            <textarea matInput name="productDescr"  [(ngModel)]= "product.productDescr"></textarea>
+                          </mat-form-field>
+
+                        
+
+                        <div class="register-button">
+                            <button  type="submit" mat-raised-button
+                                color="primary" >Update</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

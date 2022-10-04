@@ -1,22 +1,22 @@
 <mat-drawer-container class="example-container" autosize>
     <mat-drawer #drawer class="example-sidenav" mode="over">
         <div class="top"  (click)="drawer.toggle()">
-            <span><i class="fas fa-bars"></i> Kilimo</span>  
+            <span><i class="fas fa-bars"></i></span>  
         </div>
        
         <br>
 
-        <button mat-button [routerLink]="['/supplier-login/nav']">Dashboard</button>
+        <button mat-button [routerLink]="['/supplier-login/nav']">Nyumbani</button>
         <br>
-        <button mat-button [matMenuTriggerFor]="products">Products</button>
+        <button mat-button [matMenuTriggerFor]="products">Pembejeo Zangu</button>
         <mat-menu #products="matMenu">
-            <button mat-menu-item [routerLink]="['products-list']">Products List</button>
-            <button mat-menu-item [routerLink]="['new-product']">Add New Product</button>
+            <button mat-menu-item [routerLink]="['products-list']">Orodha ya Pemebejeo</button>
+            <button mat-menu-item [routerLink]="['new-product']">Sajili pembejeo</button>
         </mat-menu>
         <br>
-        <button mat-button [matMenuTriggerFor]="orders">Orders</button>
+        <button mat-button [matMenuTriggerFor]="orders">Oda</button>
         <mat-menu #orders="matMenu">
-            <button mat-menu-item [routerLink]="['pending-orders']">Pending Orders</button>
+            <button mat-menu-item [routerLink]="['pending-orders']">Oda Zinazosubiria</button>
         </mat-menu>
         <br>
 
@@ -30,7 +30,7 @@
                     <i class="fas fa-bars"></i>
                 </button>
             </a>
-            <a>Kilimo Na Pembejeo</a>
+            <h2>Kilimo Na Pembejeo</h2>
             <a>
                 <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
                     <mat-icon>more_vert</mat-icon>
@@ -38,15 +38,15 @@
                 <mat-menu #menu="matMenu">
                     <button mat-menu-item [routerLink]="['profile']">
                         <mat-icon>account_circle</mat-icon>
-                        <span>Profile</span>
+                        <span>Akaunti</span>
                     </button>
                     <button mat-menu-item disabled>
                         <mat-icon>chat</mat-icon>
-                        <span>Comments</span>
+                        <span>Maoni</span>
                     </button>
                     <button mat-menu-item [routerLink]="['/supplier-login']">
                         <mat-icon>power</mat-icon>
-                        <span>Log Out</span>
+                        <span>Toka</span>
                     </button>
                 </mat-menu>
             </a>
