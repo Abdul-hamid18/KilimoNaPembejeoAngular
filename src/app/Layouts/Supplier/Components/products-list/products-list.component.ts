@@ -1,8 +1,6 @@
-import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import {MatPaginator} from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
-import {MatTableDataSource} from '@angular/material/table';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { ProductService } from 'src/app/Layouts/Supplier/Services/Product/product.service';
 import { Products } from '../../Services/Product/Products';
@@ -19,17 +17,16 @@ export class ProductsListComponent implements OnInit {
 
   @ViewChild (MatPaginator) paginator!:MatPaginator;
 
-  constructor(private productSerice:ProductService, private router: Router) { }
+  constructor(private productService:ProductService, private router: Router) { }
 
   ngOnInit(): void {
     this.fetchProducts()
     this.dataSource.paginator = this.paginator;
-
   }
  
 
   fetchProducts(){
-    this.productSerice.getProducts(localStorage.getItem("SuplierId")).subscribe(response=>{
+    this.productService.getProducts(localStorage.getItem("SuplierId")).subscribe(response=>{
       this.dataSource=new MatTableDataSource(response)
       this.products=response
       console.log(this.dataSource)
@@ -45,20 +42,17 @@ export class ProductsListComponent implements OnInit {
   }
 
   deleteProduct(product:any){
-    this.productSerice.deleteProduct(product.productId).subscribe(response=>{
+    this.productService.deleteProduct(product.productId).subscribe(response=>{
       this.fetchProducts();
-      alert("Product has been deleted");
+      alert("Pembejeo yako imefutwa kikamilifu");
     },error=>{
-     
-      alert("Fail to delete product");
-    })
+      alert("Pembejeo yako imeshindwa kufutwa");
+    });
   }
-
 
   public updateProduct(id:number){
     this.router.navigate(['supplier-login/nav/update-product',{id}]);
-  
-}
+  }
 
 }
 

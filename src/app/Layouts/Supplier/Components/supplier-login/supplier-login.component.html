@@ -16,7 +16,7 @@
       <div class="card shadow-lg border-0 rounded-lg mt-5">
         <div class="card-header">
           <div class="row">
-            <h3 class="text-center font-weight-light my-4">Supplier Login</h3>
+            <h3 class="text-center font-weight-light my-4">Kuingia Msambazaji Pembejeo</h3>
           </div>
         </div>
         <div class="card-body">
@@ -24,23 +24,29 @@
           <form [formGroup]="loginForm" (ngSubmit)="login()">
             <div class="example-container">
               <mat-form-field appearance="fill">
-                <mat-label>Enter your email</mat-label>
-                <input matInput placeholder="pat@example.com" formControlName="supplierEmail" required>
+                <mat-label>Barua Pepe</mat-label>
+                <input matInput placeholder="email@example.com" formControlName="supplierEmail" required>
                 <mat-icon matSuffix>email</mat-icon>
+                <mat-error>
+                  Tafadhali ingiza barua pepe kwa usahihi
+                </mat-error>
               </mat-form-field>
 
               <mat-form-field appearance="fill">
-                <mat-label>Enter your password</mat-label>
+                <mat-label>Neno la Siri</mat-label>
                 <input matInput [type]="hide ? 'password' : 'text'" formControlName="supplierPassword">
                 <a mat-icon-button matSuffix (click)="hide =!hide" [attr.aria-label]="'Hide password'"
                   [attr.aria-pressed]="hide">
                   <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                 </a>
+                <mat-error>
+                  Umekosea neno la siri
+                </mat-error>
 
               </mat-form-field>
 
-              <button mat-raised-button color="accent" [disabled]="loginForm.invalid" >Login</button>
-              <div class="small"><a [routerLink]="['supplier-register']">Need an account? Sign up!</a></div>
+              <button mat-raised-button color="primary" [disabled]="loginForm.invalid" >Ingia</button>
+              <div class="small"><a [routerLink]="['supplier-register']">Huna Akaunti? Jisajili!</a></div>
 
 
             </div>
@@ -48,7 +54,7 @@
         </div>
         <div class="card-footer text-center py-3">
           <button mat-icon-button color="primary" [routerLink]="['']">
-            <mat-icon>home</mat-icon>
+            <mat-icon title="Rudi Nyumbani">home</mat-icon>
           </button>
 
         </div>

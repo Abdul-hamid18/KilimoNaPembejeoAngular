@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ProfileService } from '../../Services/Profile/profile.service';
 
 @Component({
   selector: 'app-admin-nav',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminNavComponent implements OnInit {
   showFiller=false;
-  constructor() { }
+  profile:any;
+  constructor(private profileService: ProfileService,private router:Router) { }
 
   ngOnInit(): void {
+    this.fetchProfile()
+  }
+
+  fetchProfile(){
+    this.profileService.getProfile(localStorage.getItem("AdminId")).subscribe(response=>{
+     this.profile=response
+    });
+  }
+
+
+  logOut(){
+    this.router.navigate(['/admin-login'])
+    localStorage.setItem("AdminId",JSON.stringify(""));
   }
 
 

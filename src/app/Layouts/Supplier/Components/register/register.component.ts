@@ -32,10 +32,10 @@ export class RegisterComponent implements OnInit {
     this.loginService.Register(this.registerForm.value).subscribe(response => {
       console.log(response);
       this.router.navigate(['/supplier-login'])
-      alert("Registered Successfully");
+      alert("Umefanikiwa kujisajili");
 
     }, error => {
-      alert("Failed to register");
+      alert("Usajili wako haujafanikiwa");
     })
   };
 

@@ -36,4 +36,5 @@ export class ProductService {
   getProductById(id:any){
     return this.http.get<Products>(`${baseUrl}/${id}`)
   }
+  
 }

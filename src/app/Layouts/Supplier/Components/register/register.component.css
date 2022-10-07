@@ -10,7 +10,7 @@
     margin-left: 8px;
   }
   a{
-    color: rgb(231, 73, 126);
+    color: darkblue;
   }
 
 
@@ -46,6 +46,9 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
     background: rgba(255, 255, 255, 0.1);
     color: rgba(0, 35, 122, 0.7);
+  }
+  button{
+    margin-left: 8px
   }
   
   

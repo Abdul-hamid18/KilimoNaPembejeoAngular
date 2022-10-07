@@ -1,9 +1,9 @@
 <mat-drawer-container class="example-container" autosize>
     <mat-drawer #drawer class="example-sidenav" mode="over">
-        <div class="top"  (click)="drawer.toggle()">
-            <span><i class="fas fa-bars"></i></span>  
+        <div class="top" (click)="drawer.toggle()">
+            <span><i class="fas fa-bars"></i></span>
         </div>
-       
+
         <br>
 
         <button mat-button [routerLink]="['/supplier-login/nav']">Nyumbani</button>
@@ -30,8 +30,13 @@
                     <i class="fas fa-bars"></i>
                 </button>
             </a>
-            <h2>Kilimo Na Pembejeo</h2>
-            <a>
+
+            <div class="chip">
+                <img src="../../../../../assets/img/logo2.png" alt="icon" width="96" height="96">
+                <h2>KILIMO NA PEMBEJEO</h2>
+
+            </div>
+            <a>  {{profile.supplierFName}}
                 <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
                     <mat-icon>more_vert</mat-icon>
                 </button>
@@ -44,7 +49,7 @@
                         <mat-icon>chat</mat-icon>
                         <span>Maoni</span>
                     </button>
-                    <button mat-menu-item [routerLink]="['/supplier-login']">
+                    <button mat-menu-item (click)="logOut()">
                         <mat-icon>power</mat-icon>
                         <span>Toka</span>
                     </button>

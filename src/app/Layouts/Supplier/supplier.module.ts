@@ -10,6 +10,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
+import {MatChipsModule} from '@angular/material/chips';
 
 import { SupplierRoutingModule } from './supplier-routing.module';
 import { SupplierComponent } from './supplier.component';
@@ -58,7 +59,8 @@ import { UpdateProfileComponent } from './Components/update-profile/update-profi
     MatSidenavModule,
     MatListModule,
     MatMenuModule,
-    FormsModule
+    FormsModule,
+    MatChipsModule
   ]
 })
 export class SupplierModule { }

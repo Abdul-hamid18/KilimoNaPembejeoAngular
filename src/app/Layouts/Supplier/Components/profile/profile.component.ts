@@ -21,7 +21,6 @@ export class ProfileComponent implements OnInit {
   fetchProfile(){
     this.profileService.getProfile(localStorage.getItem("SuplierId")).subscribe(response=>{
      this.profile=response
-      console.log(response)
     });
   }
 

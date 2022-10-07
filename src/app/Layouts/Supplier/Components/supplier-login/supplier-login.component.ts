@@ -16,7 +16,7 @@ export class SupplierLoginComponent implements OnInit {
   loginForm:FormGroup = new FormGroup({
     supplierId: new FormControl(0),
     supplierEmail: new FormControl("", [Validators.required, Validators.email]),
-    supplierPassword: new FormControl("", [Validators.required])
+    supplierPassword: new FormControl("", [Validators.required, Validators.minLength(8)])
   });
   
 
@@ -34,10 +34,10 @@ export class SupplierLoginComponent implements OnInit {
       this.myId=response
       localStorage.setItem("SuplierId",JSON.stringify(this.myId.supplierId));
       this.router.navigate(['/supplier-login/nav'])
-      alert("Logged In Successfully");
+      alert("Umefanikiwa kuingia");
 
     }, error => {
-      alert("Failed to login");
+      alert("Imeshindikanwa kuingizwa! \nUmekosea barua pepe au neno la siri");
     })
   };
 

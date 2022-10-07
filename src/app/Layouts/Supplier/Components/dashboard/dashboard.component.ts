@@ -3,6 +3,8 @@ import { Orders } from '../../Services/Orders/Orders';
 import { OrdersService } from '../../Services/Orders/orders.service';
 import { ProductService } from '../../Services/Product/product.service';
 import { Products } from '../../Services/Product/Products';
+import { ProductsListComponent } from '../products-list/products-list.component';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -12,6 +14,7 @@ import { Products } from '../../Services/Product/Products';
 export class DashboardComponent implements OnInit {
   orders!:Orders[]
   products!:Products[]
+ 
 
   constructor(private orderService:OrdersService,
     private productService:ProductService) { }
@@ -33,6 +36,8 @@ export class DashboardComponent implements OnInit {
       this.products=response
     });
   }
+
+  
 
 
 }

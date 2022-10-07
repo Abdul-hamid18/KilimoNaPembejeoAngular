@@ -4,8 +4,11 @@
             <div class="card shadow-lg border-0 rounded-lg mt-5">
                 <div class="card-header">
                     <h3 class="text-left font-weight-light my-4">Dashibodi</h3>
+
                 </div>
+                <!-- <mat-chip color="primary" selected>  .</mat-chip> -->
                 <div class="card-body">
+                  
                     <div class="container-fluid px-4">
                        
                         <div class="row">
@@ -14,7 +17,7 @@
                                     <div class="card-body">
                                         <i class="fa-sharp fa-solid fa-list-ol"></i>
                                         <span style="padding-left:8px ;">Pembejeo Zangu</span>
-                                        <span style="font-size: larger; float: right;"></span>
+                                        <span style="font-size: larger; float: right;">{{products.length}}</span>
                                     </div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <a class="small text-white stretched-link" [routerLink]="['products-list']">Ona Zaidi</a>
@@ -27,7 +30,7 @@
                                     <div class="card-body">
                                         <i class="fa-solid fa-cart-arrow-down"></i>
                                         <span style="padding-left:8px ;">Oda Zinazosubiria</span>
-                                        <span style="font-size: larger; float: right;"></span>
+                                        <span style="font-size: larger; float: right;">{{orders.length}}</span>
                                     </div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <a class="small text-white stretched-link" [routerLink]="['pending-orders']" >Ona Zaidi</a>
