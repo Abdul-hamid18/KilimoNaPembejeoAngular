@@ -11,7 +11,7 @@ import { Products } from '../../Services/Product/Products';
   templateUrl:  './products-list.component.html',
 })
 export class ProductsListComponent implements OnInit {
-  displayedColumns: string[]=['No.', 'Product Name', 'Product Price', 'Product Description', 'Actions']
+  displayedColumns: string[]=['No.', 'Product Name', 'Product Price','Category', 'Product Description', 'Actions']
   dataSource = new MatTableDataSource();
   products!: Products[]
 

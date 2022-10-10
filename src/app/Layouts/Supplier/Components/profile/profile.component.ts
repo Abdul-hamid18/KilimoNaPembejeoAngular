@@ -26,7 +26,10 @@ export class ProfileComponent implements OnInit {
 
   public updateProfile(id:number){
     this.router.navigate(['supplier-login/nav/update-profile',{id}]);
-  
+}
+
+public updatePassword(id:number){
+  this.router.navigate(['supplier-login/nav/update-password',{id}]);
 }
 
 }

@@ -23,6 +23,19 @@
                             </mat-error>
                         </mat-form-field>
 
+                        <mat-form-field class="example-part-width" appearance="fill">
+                            <mat-label>Chagua Kategori ya Pembejeo</mat-label>
+                            <mat-select formControlName="category">
+                                <mat-option value="Mkulima wa Mifugo">Dawa za Mifugo</mat-option>
+                                <mat-option value="Mkulima wa Mazao">Dawa za Mimea</mat-option>
+                                <mat-option value="Mkulima wa Mifugo">Vyakula vya Mifugo</mat-option>
+                                <mat-option value="Mkulima wa Mazao">Mbolea</mat-option>
+                            </mat-select>
+                            <mat-error>
+                                Tafadhali Chagua Kategori ya Mkulima
+                            </mat-error>
+                        </mat-form-field>
+
                         <mat-form-field class="example-full-width" appearance="fill">
                             <mat-label>Maelezo ya Bidhaa</mat-label>
                             <textarea matInput id="productDescr" formControlName="productDescr"  ></textarea>

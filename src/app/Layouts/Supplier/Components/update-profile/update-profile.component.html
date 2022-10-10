@@ -55,32 +55,9 @@
                               </mat-error>
                             </mat-form-field>
   
-                            <mat-form-field class="example-part-width" appearance="fill">
-                              <mat-label>Neno la Siri</mat-label>
-                              <input matInput [type]="hidepassword ? 'password' : 'text'" 
-                              formControlName="supplierPassword"  id="supplierPassword">
-                              <a mat-icon-button matSuffix (click)="hidepassword =!hidepassword" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidepassword">
-                                <mat-icon>{{hidepassword ? 'visibility_off' : 'visibility'}}</mat-icon>
-                              </a>
-                              <mat-error>
-                                Tafadhali ingiza neno lako la Siri lisilopungua herufi nane
-                              </mat-error>
+                            
                     
-                            </mat-form-field>
-
-                            <mat-form-field class="example-part-width" appearance="fill">
-                              <mat-label>Rudia neno la siri</mat-label>
-                              <input formControlName="confirmPassword" matInput [type]="hidepassword2 ? 'password' : 'text'" 
-                              >
-                              <a mat-icon-button matSuffix (click)="hidepassword2 =!hidepassword2" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidepassword2">
-                                <mat-icon>{{hidepassword ? 'visibility_off' : 'visibility'}}</mat-icon>
-                              </a>
-                              <mat-error>
-                                Maneno ya siri hayafanani
-                            </mat-error>
-                    
-                            </mat-form-field>
-  
+ 
                             
   
                             <button mat-raised-button color="primary" [disabled]="updateForm.invalid" type="submit">Badili</button>

@@ -22,8 +22,6 @@ export class UpdateProfileComponent implements OnInit {
     supplierAddress: new FormControl("", [Validators.required]),
     supplierPhoneNo: new FormControl("", [Validators.required]),
     supplierEmail: new FormControl("", [Validators.required, Validators.email]),
-    supplierPassword: new FormControl("", [Validators.required]),
-    confirmPassword: new FormControl("", [Validators.required])
   });
 
 
@@ -39,16 +37,13 @@ export class UpdateProfileComponent implements OnInit {
 
     this.profileService.getProfile(this.id).subscribe(data => {
       this.profile = data;
-
-      this.updateForm = new FormGroup({
+   this.updateForm = new FormGroup({
         supplierRegNo: new FormControl(data.supplierRegNo, [Validators.required]),
         supplierFName: new FormControl(data.supplierFName, [Validators.required]),
         supplierLName: new FormControl(this.profile.supplierLName, [Validators.required]),
         supplierAddress: new FormControl(this.profile.supplierAddress, [Validators.required]),
         supplierPhoneNo: new FormControl(this.profile.supplierPhoneNo, [Validators.required]),
         supplierEmail: new FormControl(this.profile.supplierEmail, [Validators.required, Validators.email]),
-        supplierPassword: new FormControl("", [Validators.required, Validators.minLength(8)]),
-        confirmPassword: new FormControl("", [Validators.required, Validators.minLength(8)])
       });
 
     });
@@ -63,7 +58,8 @@ export class UpdateProfileComponent implements OnInit {
       });
     }
 
-    goToProfile(){
+    
+   goToProfile(){
       this.router.navigate(['/supplier-login/nav/profile']);
     }
 

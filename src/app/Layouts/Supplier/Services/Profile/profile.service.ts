@@ -5,6 +5,7 @@ import { environment } from 'src/environments/environment';
 import { Supplier } from './Supplier';
 
 const baseUrl=environment.basePath+"supplier";
+const passwordUrl = baseUrl+"/password"
 
 
 @Injectable({
@@ -20,5 +21,9 @@ export class ProfileService {
 
   updateProfile(id:any,profile:Supplier): Observable<Object>{
     return this.http.put(`${baseUrl}/${id}`,profile);
+  }
+
+  updatePassword(id:any,profile:Supplier): Observable<Object>{
+    return this.http.put(`${passwordUrl}/${id}`,profile);
   }
 }

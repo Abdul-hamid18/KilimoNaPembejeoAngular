@@ -8,6 +8,7 @@ import { ProductsListComponent } from './Components/products-list/products-list.
 import { ProfileComponent } from './Components/profile/profile.component';
 import { RegisterComponent } from './Components/register/register.component';
 import { SupplierLoginComponent } from './Components/supplier-login/supplier-login.component';
+import { UpdatePasswordComponent } from './Components/update-password/update-password.component';
 import { UpdateProductComponent } from './Components/update-product/update-product.component';
 import { UpdateProfileComponent } from './Components/update-profile/update-profile.component';
 
@@ -22,6 +23,7 @@ const routes: Routes = [
     {path:"update-product", component:UpdateProductComponent},
     {path:"profile", component:ProfileComponent},
     {path:"update-profile", component:UpdateProfileComponent},
+    {path:"update-password", component:UpdatePasswordComponent},
     {path:"pending-orders", component:PendingOrdersComponent}
   ]}
 ];

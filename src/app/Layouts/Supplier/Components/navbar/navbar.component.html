@@ -1,24 +1,50 @@
 <mat-drawer-container class="example-container" autosize>
-    <mat-drawer #drawer class="example-sidenav" mode="over">
-        <div class="top" (click)="drawer.toggle()">
-            <span><i class="fas fa-bars"></i></span>
-        </div>
+    <mat-drawer #drawer class="example-sidenav" mode="side">
 
-        <br>
+        <mat-list>
+            
+            <span ><mat-icon>library_books</mat-icon> Menu Kuu</span>
+        </mat-list>
+        <mat-divider></mat-divider>
+        <mat-selection-list [multiple]="false">
 
-        <button mat-button [routerLink]="['/supplier-login/nav']">Nyumbani</button>
-        <br>
-        <button mat-button [matMenuTriggerFor]="products">Pembejeo Zangu</button>
-        <mat-menu #products="matMenu">
-            <button mat-menu-item [routerLink]="['products-list']">Orodha ya Pemebejeo</button>
-            <button mat-menu-item [routerLink]="['new-product']">Sajili pembejeo</button>
-        </mat-menu>
-        <br>
-        <button mat-button [matMenuTriggerFor]="orders">Oda</button>
-        <mat-menu #orders="matMenu">
-            <button mat-menu-item [routerLink]="['pending-orders']">Oda Zinazosubiria</button>
-        </mat-menu>
-        <br>
+            <div mat-subheader>Nyumbani</div>
+            <mat-list-option [routerLink]="['/supplier-login/nav']">
+                <mat-icon mat-list-icon>dashboard</mat-icon>
+                <div mat-line>Nyumbani</div>
+                <div mat-line>Dashibodi</div>
+            </mat-list-option>
+            <mat-divider></mat-divider>
+
+
+            <div mat-subheader> Pembejeo Zangu</div>
+
+            <mat-list-option [routerLink]="['products-list']">
+                <mat-icon mat-list-icon>list</mat-icon>
+                Orodha ya Pembejeo
+            </mat-list-option>
+
+            <mat-list-option [routerLink]="['new-product']">
+                <mat-icon mat-list-icon>playlist_add</mat-icon>
+                Sajili Pembejeo
+            </mat-list-option>
+            <mat-divider></mat-divider>
+
+
+            <div mat-subheader> Oda Zangu</div>
+
+            <mat-list-option [routerLink]="['pending-orders']">
+                <mat-icon mat-list-icon>shopping_cart</mat-icon>
+                Oda Zinazosubiria
+            </mat-list-option>
+            <mat-divider></mat-divider>
+
+        </mat-selection-list>
+
+
+
+
+
 
 
     </mat-drawer>
@@ -36,7 +62,7 @@
                 <h2>KILIMO NA PEMBEJEO</h2>
 
             </div>
-            <a>  {{profile.supplierFName}}
+            <a> {{profile.supplierFName}}
                 <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
                     <mat-icon>more_vert</mat-icon>
                 </button>
@@ -56,11 +82,15 @@
                 </mat-menu>
             </a>
         </div>
-
         <div class="main">
             <router-outlet></router-outlet>
         </div>
 
     </div>
+   
+
+
+
+
 
 </mat-drawer-container>

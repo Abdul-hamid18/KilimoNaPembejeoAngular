@@ -12,12 +12,25 @@
                             <input matInput formControlName="productName" >
                             <mat-error>Tafadhali jaza jina la Pembejeo</mat-error>
                         </mat-form-field>
-                        
+
+                       
 
                         <mat-form-field class="example-part-width" appearance="fill">
                             <mat-label>Bei ya Pembejeo</mat-label>
                             <input type="number" matInput formControlName="productPrice">
                             <mat-error>Tafadhali jaza bei ya Pembejeo (bei iwe mfumo wa nambari tuh!)</mat-error>
+                        </mat-form-field>
+                        <mat-form-field class="example-part-width" appearance="fill">
+                            <mat-label>Chagua Kategori ya Pembejeo</mat-label>
+                            <mat-select formControlName="category">
+                                <mat-option value="Mkulima wa Mifugo">Dawa za Mifugo</mat-option>
+                                <mat-option value="Mkulima wa Mazao">Dawa za Mimea</mat-option>
+                                <mat-option value="Mkulima wa Mifugo">Vyakula vya Mifugo</mat-option>
+                                <mat-option value="Mkulima wa Mazao">Mbolea</mat-option>
+                            </mat-select>
+                            <mat-error>
+                                Tafadhali Chagua Kategori ya Mkulima
+                            </mat-error>
                         </mat-form-field>
 
                         <mat-form-field class="example-full-width" appearance="fill">

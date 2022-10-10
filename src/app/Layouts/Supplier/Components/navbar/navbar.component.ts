@@ -16,9 +16,8 @@ export class NavbarComponent implements OnInit {
    }
 
   ngOnInit(): void { 
-    
-  this.fetchProfile()
-   }
+    this.fetchProfile()
+  }
    fetchProfile(){
     this.profileService.getProfile(localStorage.getItem("SuplierId")).subscribe(response=>{
      this.profile=response

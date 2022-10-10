@@ -1,15 +1,15 @@
 .example-full-width {
-    width: 97%;
-    }
+  width: 97.6%;
+}
 
-  .example-part-width{
-    width: 48%;
-  }
+.example-part-width {
+  width: 32.3%;
+}
 
-  mat-form-field {
-    margin-left: 8px;
-  }
+mat-form-field {
+  margin: 2px;
+}
 
-  .register-button{
-    margin-left: 8px;
-  }
+.register-button {
+  margin-left: 8px;
+}

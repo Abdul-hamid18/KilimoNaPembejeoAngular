@@ -17,7 +17,8 @@ export class UpdateProductComponent implements OnInit {
     supplierId: new FormControl(localStorage.getItem("SuplierId")),
     productName: new FormControl("", [Validators.required]),
     productDescr: new FormControl("", [Validators.required]),
-    productPrice: new FormControl("", [Validators.required])
+    productPrice: new FormControl("", [Validators.required]),
+    category: new FormControl("", [Validators.required])
   });
 
 
@@ -41,7 +42,8 @@ export class UpdateProductComponent implements OnInit {
         supplierId: new FormControl(localStorage.getItem("SuplierId")),
         productName: new FormControl(this.product.productName, [Validators.required]),
         productDescr: new FormControl(this.product.productDescr, [Validators.required]),
-        productPrice: new FormControl(this.product.productPrice, [Validators.required])
+        productPrice: new FormControl(this.product.productPrice, [Validators.required]),
+        category: new FormControl(this.product.category, [Validators.required])
       });
 
     });

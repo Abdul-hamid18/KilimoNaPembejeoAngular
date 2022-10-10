@@ -10,16 +10,16 @@
   }
   
   .example-sidenav {
-    padding: 20px;
+    padding: 10px;
   }
 
   /* The navigation bar */
 .navbar {
   overflow: hidden;
   background-color: #13375b;
-  position: fixed; /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
-  width: 100%; /* Full width */
+  width: 100%;; /* Full width */
+
 }
 
 /* Links inside the navbar */
@@ -38,7 +38,7 @@
 
 /* Main content */
 .main {
-  margin-top: 30px; /* Add a top margin to avoid content overlay */
+  margin-top: 0px; /* Add a top margin to avoid content overlay */
 }
 .top{
   align-items: center;
@@ -71,4 +71,5 @@ h2{
   width: 50px;
   border-radius: 50%;
 }
+
 

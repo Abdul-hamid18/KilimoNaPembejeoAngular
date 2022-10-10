@@ -15,7 +15,8 @@ export class NewProductComponent implements OnInit {
     supplierId: new FormControl(localStorage.getItem("SuplierId")),
     productName: new FormControl("", [Validators.required]),
     productDescr: new FormControl("", [Validators.required]),
-    productPrice: new FormControl("", [Validators.required])
+    productPrice: new FormControl("", [Validators.required]),
+    category: new FormControl("", [Validators.required])
   });
 
   constructor(private productService:ProductService, private router:Router) { }
@@ -26,10 +27,10 @@ export class NewProductComponent implements OnInit {
   saveNewProduct() {
     this.productService.newProduct(this.productForm.value).subscribe(response => {
       this.router.navigate(['/supplier-login/nav/products-list'])
-      alert("Product has been saved");
+      alert("Pembejeo yako imesajiliwa kikamilifu");
 
     }, error => {
-      alert("Failed to save new product");
+      alert("Pembejeo yako imeshindwa kusajiliwa");
     })
   };
 

@@ -27,6 +27,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { UpdateProductComponent } from './Components/update-product/update-product.component';
 import { UpdateProfileComponent } from './Components/update-profile/update-profile.component';
+import { UpdatePasswordComponent } from './Components/update-password/update-password.component';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import { UpdateProfileComponent } from './Components/update-profile/update-profi
     SupplierLoginComponent,
     UpdateProductComponent,
     UpdateProfileComponent,
+    UpdatePasswordComponent,
   ],
   imports: [
     CommonModule,

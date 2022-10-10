@@ -3,4 +3,5 @@ export class Products{
     productName!:String;
     productPrice!:number;
     productDescr!:String;
+    category!:String
 }
