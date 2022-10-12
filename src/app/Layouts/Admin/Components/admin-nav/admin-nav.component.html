@@ -1,30 +1,56 @@
 <mat-drawer-container class="example-container" autosize>
-    <mat-drawer #drawer class="example-sidenav" mode="over">
-        <p *ngIf="showFiller"></p>
-        <button (click)="drawer.toggle()" mat-button>
-            <i class="fas fa-bars"></i>
-        </button>
-        <br>
-
-        <button mat-button [routerLink]="['/admin-login/admin-nav']">Nyumbani</button>
-        <br>
-        <button mat-button [matMenuTriggerFor]="farmers">Wakulima</button>
-        <mat-menu #farmers="matMenu">
-            <button mat-menu-item [routerLink]="['farmers-list']"  >Orodha Ya Wakulima</button>
-            <button mat-menu-item [routerLink]="['register-farmer']" >Sajili Mkulima</button>
-        </mat-menu>
-        <br>
-        <button mat-button [matMenuTriggerFor]="suppliers">Wasambazaji Pembejeo</button>
-        <mat-menu #suppliers="matMenu">
-            <button mat-menu-item [routerLink]="['suppliers-list']"  >Orodha ya Wasambazaji</button>
-            <button mat-menu-item [routerLink]="['register-supplier']" >Sajili Msambazaji</button>
-        </mat-menu>
-        <br>
-        <button mat-button [matMenuTriggerFor]="products"  >Pembejeo</button>
-        <mat-menu #products="matMenu">
-            <button mat-menu-item [routerLink]="['full-products-list']"  >Orodha Ya Pembejeo</button>
-        </mat-menu>
+    <mat-drawer #drawer class="sidenav" fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false">
+        <mat-toolbar>Menu Kuu</mat-toolbar>
+        <mat-divider></mat-divider>
+        <mat-nav-list>
+            <mat-selection-list [multiple]="false">
       
+              <div mat-subheader>Nyumbani</div>
+              <mat-list-option [routerLink]="['/admin-login/admin-nav']">
+                  <mat-icon mat-list-icon>dashboard</mat-icon>
+                  <div mat-line>Nyumbani</div>
+                  <div mat-line>Dashibodi</div>
+              </mat-list-option>
+              <mat-divider></mat-divider>
+      
+      
+              <div mat-subheader>Wakulima</div>
+      
+              <mat-list-option [routerLink]="['farmers-list']">
+                  <mat-icon mat-list-icon>list</mat-icon>
+                  Orodha ya Wakulima
+              </mat-list-option>
+      
+             
+              <mat-divider></mat-divider>
+
+              <div mat-subheader>Wasambazaji</div>
+      
+              <mat-list-option [routerLink]="['suppliers-list']">
+                  <mat-icon mat-list-icon>list</mat-icon>
+                  Orodha ya Wasambazaji
+              </mat-list-option>
+      
+              
+              <mat-divider></mat-divider>
+      
+      
+              <div mat-subheader>Pembejeo</div>
+      
+              <mat-list-option [routerLink]="['full-products-list']">
+                  <mat-icon mat-list-icon>list</mat-icon>
+                  Orodha ya Pembejeo
+              </mat-list-option>
+              <mat-divider></mat-divider>
+      
+          </mat-selection-list>
+          </mat-nav-list>
+
+    
+        
 
     </mat-drawer>
 
@@ -35,7 +61,11 @@
                     <i class="fas fa-bars"></i>
                 </button>
             </a>
-            <h2>Kilimo Na Pembejeo</h2>
+            <div class="chip">
+                <img src="../../../../../assets/img/logo2.png" alt="icon" width="96" height="96">
+                <h2>KILIMO NA PEMBEJEO</h2>
+
+            </div>
             <a>
                 <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
                     <mat-icon>more_vert</mat-icon>

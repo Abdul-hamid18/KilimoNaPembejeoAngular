@@ -32,10 +32,13 @@ export class RegisterFarmerComponent implements OnInit {
   saveNewFarmer() {
     this.farmersSerice.newFarmer(this.farmerForm.value).subscribe(response => {
       this.router.navigate(['/admin-login/admin-nav/farmers-list'])
-      alert("Farmer has been saved");
+      .then(() => {
+        window.location.reload();
+      });
+      alert("Mkulima amesajiliwa kikamilifu");
 
     }, error => {
-      alert("Fail to save new farmer");
+      alert("Mkulima Ameshindwa kusajiliwa");
     })
   };
 

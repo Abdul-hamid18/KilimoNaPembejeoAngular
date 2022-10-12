@@ -15,10 +15,10 @@
 
   /* The navigation bar */
 .navbar {
-  overflow: hidden;
+  position: sticky;
+  top: 0;
+  z-index: 1;
   background-color: #13375b;
-  top: 0; /* Position the navbar at the top of the page */
-  width: 100%;; /* Full width */
 
 }
 

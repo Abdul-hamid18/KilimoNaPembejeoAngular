@@ -1,8 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { ProductService } from 'src/app/Layouts/Supplier/Services/Product/product.service';
 import { SuppliersService } from '../../Services/Suppliers/suppliers.service';
+import { RegisterSupplierComponent } from '../register-supplier/register-supplier.component';
 
 @Component({
   selector: 'app-suppliers-list',
@@ -16,7 +18,8 @@ export class SuppliersListComponent implements OnInit {
 
   @ViewChild (MatPaginator) paginator!:MatPaginator;
 
-  constructor(private supplierService:SuppliersService) { }
+  constructor(private supplierService:SuppliersService,
+    public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.fetchSuppliers()
@@ -52,5 +55,11 @@ export class SuppliersListComponent implements OnInit {
       alert("Fail to delete supplier");
     })
   }
+
+
+  openDialog() {
+    this.dialog.open(RegisterSupplierComponent);
+  }
+
 
 }

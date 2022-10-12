@@ -15,5 +15,10 @@ export class FullProductsService {
   getProducts(){
     return this.http.get<any[]>(`${baseUrl}`);
   }
+
+    //delete supplier
+    deleteProduct(id:any){
+      return this.http.delete(`${baseUrl}/${id}`);
+    }
   
 }

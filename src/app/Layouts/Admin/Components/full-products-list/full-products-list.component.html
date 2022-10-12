@@ -57,7 +57,7 @@
                 <th mat-header-cell *matHeaderCellDef> Hatua </th>
                 <td mat-cell *matCellDef="let element"> 
                   <div class="sb-nav-link-icon">
-                    <button class="delete-button">
+                    <button class="delete-button" (click)="deleteProduct(element)">
                       <i style="padding: 4px;"class="fas fa-trash"></i>
                     </button>
                     <button class="update-button">

@@ -11,6 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import {MatChipsModule} from '@angular/material/chips';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { SupplierRoutingModule } from './supplier-routing.module';
 import { SupplierComponent } from './supplier.component';
@@ -62,7 +63,8 @@ import { UpdatePasswordComponent } from './Components/update-password/update-pas
     MatListModule,
     MatMenuModule,
     FormsModule,
-    MatChipsModule
+    MatChipsModule,
+    MatToolbarModule
   ]
 })
 export class SupplierModule { }

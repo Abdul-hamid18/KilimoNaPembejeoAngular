@@ -21,6 +21,14 @@ table {
     color: green;
     background: none;
   }
+
+  #addSupplier{
+    float: right; 
+    margin-bottom: 8px;
+    background-color: darkcyan;
+    color: white;
+  }
+  
   
   
   

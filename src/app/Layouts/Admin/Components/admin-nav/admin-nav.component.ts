@@ -1,5 +1,7 @@
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { map, Observable, shareReplay } from 'rxjs';
 import { ProfileService } from '../../Services/Profile/profile.service';
 
 @Component({
@@ -10,7 +12,15 @@ import { ProfileService } from '../../Services/Profile/profile.service';
 export class AdminNavComponent implements OnInit {
   showFiller=false;
   profile:any;
-  constructor(private profileService: ProfileService,private router:Router) { }
+
+  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+  .pipe(
+    map(result => result.matches),
+    shareReplay()
+  );
+
+  constructor(private profileService: ProfileService,private router:Router,
+    private breakpointObserver: BreakpointObserver) { }
 
   ngOnInit(): void {
     this.fetchProfile()

@@ -1,10 +1,9 @@
 <mat-drawer-container class="example-container" autosize>
-    <mat-drawer #drawer class="example-sidenav" mode="side">
-
-        <mat-list>
-            
-            <span ><mat-icon>library_books</mat-icon> Menu Kuu</span>
-        </mat-list>
+    <mat-drawer #drawer class="sidenav" fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>Menu Kuu</mat-toolbar>
         <mat-divider></mat-divider>
         <mat-selection-list [multiple]="false">
 

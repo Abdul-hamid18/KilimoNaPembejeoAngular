@@ -12,7 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
-
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { AdminRoutingModule } from './admin-routing.module';
 import { AdminComponent } from './admin.component';
@@ -26,7 +26,7 @@ import { RegisterFarmerComponent } from './Components/register-farmer/register-f
 import { RegisterSupplierComponent } from './Components/register-supplier/register-supplier.component';
 import { AdminLoginComponent } from './Components/admin-login/admin-login.component';
 import { AdminProfileComponent } from './Components/admin-profile/admin-profile.component';
-
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -57,6 +57,8 @@ import { AdminProfileComponent } from './Components/admin-profile/admin-profile.
     MatSidenavModule,
     MatListModule,
     MatMenuModule,
+    MatToolbarModule,
+    MatDialogModule
 
 
   ]

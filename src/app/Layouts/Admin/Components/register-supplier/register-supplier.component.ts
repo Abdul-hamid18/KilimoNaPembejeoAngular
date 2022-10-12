@@ -31,10 +31,13 @@ export class RegisterSupplierComponent implements OnInit {
   saveNewSupplier() {
     this.supplierSerice.newSupplier(this.supplierForm.value).subscribe(response => {
       this.router.navigate(['admin-login/admin-nav/suppliers-list'])
-      alert("Supplier has been saved");
+      .then(() => {
+        window.location.reload();
+      });
+      alert("Msambazaji amesajiliwa kikamilifu");
 
     }, error => {
-      alert("Failed to save new supplier");
+      alert("Msambazaji ameshindwa kusajiliwa");
     })
   };
 

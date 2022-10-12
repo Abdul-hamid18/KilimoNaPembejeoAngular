@@ -1,10 +1,12 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { Farmers } from '../../Services/FarmersServices/farmers';
 import { FarmersService } from '../../Services/FarmersServices/farmers.service';
+import { RegisterFarmerComponent } from '../register-farmer/register-farmer.component';
 
 @Component({
   selector: 'app-farmers-list',
@@ -21,7 +23,8 @@ export class FarmersListComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private farmersSerice: FarmersService, private router:Router) { }
+  constructor(private farmersSerice: FarmersService, private router:Router,
+    public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.fetchFarmers()
@@ -56,6 +59,10 @@ export class FarmersListComponent implements OnInit {
       this.fetchFarmers();
       alert("Fail to delete farmer");
     })
+  }
+
+  openDialog() {
+    this.dialog.open(RegisterFarmerComponent);
   }
 
  

@@ -8,20 +8,16 @@
     
     
   }
-  
-  .example-sidenav {
-    padding: 25px;
-  }
+
 
   /* The navigation bar */
-.navbar {
-  overflow: hidden;
-  background-color: darkcyan;
-  position: fixed; /* Set the navbar to fixed position */
-  top: 0; /* Position the navbar at the top of the page */
-  width: 100%; /* Full width */
-  align-items: center;
-}
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: darkcyan;
+  
+  }
 
 /* Links inside the navbar */
 .navbar a {
@@ -37,15 +33,34 @@
   color: whitesmoke;
 }
 
-/* Main content */
-.main {
-  margin-top: 30px; /* Add a top margin to avoid content overlay */
-}
 
 h2{
-  font-family: lobster;
-  font-size: 30px;
-  color: white;
+  font-family: fantasy;
+  font-size: 20px;
+  color:  darkcyan;
+  padding-top: 10px;
   
 }
+
+
+.chip {
+  display:inline-flex;
+  align-content: center;
+  padding: 0 25px;
+  height: 50px;
+  font-size: 16px;
+  line-height: 50px;
+  border-radius: 25px;
+  background-color: #f1f1f1;
+}
+
+.chip img {
+  float: left;
+  margin: 0 10px 0 -25px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+
 

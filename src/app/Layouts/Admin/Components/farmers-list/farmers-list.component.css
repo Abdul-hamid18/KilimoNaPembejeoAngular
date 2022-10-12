@@ -22,4 +22,11 @@ table {
   background: none;
 }
 
+#addFarmer{
+  float: right; 
+  margin-bottom: 8px;
+  background-color: darkcyan;
+  color: white;
+}
+
 

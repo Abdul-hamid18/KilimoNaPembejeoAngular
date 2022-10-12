@@ -20,11 +20,15 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import {MatChipsModule} from '@angular/material/chips';
+import { NavbarComponent } from './Layouts/Home/navbar/navbar.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
+    NavbarComponent,
   ],
 
   imports: [
@@ -45,7 +49,9 @@ import {MatChipsModule} from '@angular/material/chips';
     MatListModule,
     MatMenuModule,
     FormsModule,
-    MatChipsModule
+    MatChipsModule,
+    LayoutModule,
+    MatToolbarModule
   ],
 
   providers: [],

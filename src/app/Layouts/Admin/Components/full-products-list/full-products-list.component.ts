@@ -41,4 +41,14 @@ export class FullProductsListComponent implements OnInit {
     }
   }
 
+  deleteProduct(product:any){
+    this.productSerice.deleteProduct(product.productId).subscribe(response=>{
+      this.fetchProducts();
+      alert("Product has been deleted");
+    },error=>{
+      this.fetchProducts();
+      alert("Fail to delete product");
+    })
+  }
+
 }

@@ -1,0 +1,62 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>Menu Kuu</mat-toolbar>
+    <mat-nav-list>
+      <mat-selection-list [multiple]="false">
+
+        <div mat-subheader>Nyumbani</div>
+        <mat-list-option [routerLink]="['/supplier-login/nav']">
+            <mat-icon mat-list-icon>dashboard</mat-icon>
+            <div mat-line>Nyumbani</div>
+            <div mat-line>Dashibodi</div>
+        </mat-list-option>
+        <mat-divider></mat-divider>
+
+
+        <div mat-subheader> Pembejeo Zangu</div>
+
+        <mat-list-option [routerLink]="['products-list']">
+            <mat-icon mat-list-icon>list</mat-icon>
+            Orodha ya Pembejeo
+        </mat-list-option>
+
+        <mat-list-option [routerLink]="['new-product']">
+            <mat-icon mat-list-icon>playlist_add</mat-icon>
+            Sajili Pembejeo
+        </mat-list-option>
+        <mat-divider></mat-divider>
+
+
+        <div mat-subheader> Oda Zangu</div>
+
+        <mat-list-option [routerLink]="['pending-orders']">
+            <mat-icon mat-list-icon>shopping_cart</mat-icon>
+            Oda Zinazosubiria
+        </mat-list-option>
+        <mat-divider></mat-divider>
+
+    </mat-selection-list>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+
+      <div class="chip">
+        <img src="../../../../../assets/img/logo2.png" alt="icon" width="96" height="96">
+        <h2>KILIMO NA PEMBEJEO</h2>
+    </div>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+  </mat-sidenav-content>
+</mat-sidenav-container>
