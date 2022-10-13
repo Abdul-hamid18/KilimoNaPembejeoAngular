@@ -7,10 +7,10 @@
 
         </div>
         <div class="card-body">
-          <button mat-raised-button color="primary" style="float: right; margin-bottom: 8px;"
-            [routerLink]="['../new-product']">
-            <mat-icon>library_add</mat-icon> Ongeza Pembejeo
-          </button>
+          <button mat-raised-button color="primary" id="addProduct" 
+          matBadge={{products.length}} matBadgePosition="before" matBadgeColor="accent"(click)="openDialog()">
+          <mat-icon>library_add</mat-icon> Ongeza Pembejeo
+        </button>
           <mat-form-field appearance="fill">
             <mat-label>Tafuta</mat-label>
             <mat-icon matSuffix>search</mat-icon>

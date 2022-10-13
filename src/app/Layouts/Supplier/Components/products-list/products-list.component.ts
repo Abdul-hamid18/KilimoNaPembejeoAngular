@@ -1,9 +1,15 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { ProductService } from 'src/app/Layouts/Supplier/Services/Product/product.service';
 import { Products } from '../../Services/Product/Products';
+import { NewProductComponent } from '../new-product/new-product.component';
+import { NotifierComponent } from '../notifier/notifier.component';
+import { UpdateProductComponent } from '../update-product/update-product.component';
+
 
 @Component({
   selector: 'app-product-list',
@@ -15,9 +21,15 @@ export class ProductsListComponent implements OnInit {
   dataSource = new MatTableDataSource();
   products!: Products[]
 
+  durationInSeconds = 5;
+
+
+
+
   @ViewChild (MatPaginator) paginator!:MatPaginator;
 
-  constructor(private productService:ProductService, private router: Router) { }
+  constructor(private productService:ProductService, private router: Router,
+    public dialog: MatDialog,private _snackBar: MatSnackBar, ) { }
 
   ngOnInit(): void {
     this.fetchProducts()
@@ -44,7 +56,10 @@ export class ProductsListComponent implements OnInit {
   deleteProduct(product:any){
     this.productService.deleteProduct(product.productId).subscribe(response=>{
       this.fetchProducts();
-      alert("Pembejeo yako imefutwa kikamilifu");
+      // alert("Pembejeo yako imefutwa kikamilifu");
+      this._snackBar.openFromComponent(NotifierComponent, {
+        duration: this.durationInSeconds * 1000,
+      });
     },error=>{
       alert("Pembejeo yako imeshindwa kufutwa");
     });
@@ -52,7 +67,17 @@ export class ProductsListComponent implements OnInit {
 
   public updateProduct(id:number){
     this.router.navigate(['supplier-login/nav/update-product',{id}]);
+
   }
+
+  openDialog() {
+    this.dialog.open(NewProductComponent);
+  }
+
+  
+
+
+
 
 }
 

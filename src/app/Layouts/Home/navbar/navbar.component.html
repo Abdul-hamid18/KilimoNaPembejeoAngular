@@ -1,62 +1,29 @@
-<mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport
-      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-      [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="(isHandset$ | async) === false">
-    <mat-toolbar>Menu Kuu</mat-toolbar>
-    <mat-nav-list>
-      <mat-selection-list [multiple]="false">
-
-        <div mat-subheader>Nyumbani</div>
-        <mat-list-option [routerLink]="['/supplier-login/nav']">
-            <mat-icon mat-list-icon>dashboard</mat-icon>
-            <div mat-line>Nyumbani</div>
-            <div mat-line>Dashibodi</div>
-        </mat-list-option>
-        <mat-divider></mat-divider>
+<button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#newFormModal">New</button>
 
 
-        <div mat-subheader> Pembejeo Zangu</div>
+<div class="modal fade" id="newFormModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Owner Info</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <form >
+                  <div class="mb-3">
+                      <label for="ownerName" class="form-label">Owner Name</label>
+                      <input type="text" class="form-control" id="ownerName" formControlName="ownerName">
+                  </div>
+                  <div class="mb-3">
+                      <label for="ownerPhone" class="form-label">Owner Phone</label>
+                      <input type="text" class="form-control" id="ownerPhone" formControlName="ownerPhone">
+                  </div>
+                  <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Save</button>
+              </form>
+          </div>
+          <div class="modal-footer">
 
-        <mat-list-option [routerLink]="['products-list']">
-            <mat-icon mat-list-icon>list</mat-icon>
-            Orodha ya Pembejeo
-        </mat-list-option>
-
-        <mat-list-option [routerLink]="['new-product']">
-            <mat-icon mat-list-icon>playlist_add</mat-icon>
-            Sajili Pembejeo
-        </mat-list-option>
-        <mat-divider></mat-divider>
-
-
-        <div mat-subheader> Oda Zangu</div>
-
-        <mat-list-option [routerLink]="['pending-orders']">
-            <mat-icon mat-list-icon>shopping_cart</mat-icon>
-            Oda Zinazosubiria
-        </mat-list-option>
-        <mat-divider></mat-divider>
-
-    </mat-selection-list>
-    </mat-nav-list>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <mat-toolbar color="primary">
-      <button
-        type="button"
-        aria-label="Toggle sidenav"
-        mat-icon-button
-        (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async">
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-      </button>
-
-      <div class="chip">
-        <img src="../../../../../assets/img/logo2.png" alt="icon" width="96" height="96">
-        <h2>KILIMO NA PEMBEJEO</h2>
-    </div>
-    </mat-toolbar>
-    <!-- Add Content Here -->
-  </mat-sidenav-content>
-</mat-sidenav-container>
+          </div>
+      </div>
+  </div>
+</div>

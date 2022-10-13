@@ -23,6 +23,11 @@ table {
   background: none;
 }
 
+#addProduct{
+  float: right; 
+  margin-bottom: 8px;
+}
+
 
 
 

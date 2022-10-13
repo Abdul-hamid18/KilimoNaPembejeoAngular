@@ -27,6 +27,9 @@ export class NewProductComponent implements OnInit {
   saveNewProduct() {
     this.productService.newProduct(this.productForm.value).subscribe(response => {
       this.router.navigate(['/supplier-login/nav/products-list'])
+      .then(() => {
+        window.location.reload();
+      });
       alert("Pembejeo yako imesajiliwa kikamilifu");
 
     }, error => {

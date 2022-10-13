@@ -4,10 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { AppRoutingModule } from './app-routing.module';
 import { MatTableModule } from '@angular/material/table';
-
 import { AppComponent } from './app.component';
 import { LoginComponent } from './Layouts/Home/login/login.component';
-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
@@ -51,7 +49,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     FormsModule,
     MatChipsModule,
     LayoutModule,
-    MatToolbarModule
+    MatToolbarModule,
   ],
 
   providers: [],

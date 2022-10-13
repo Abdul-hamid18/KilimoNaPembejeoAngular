@@ -12,6 +12,9 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import {MatChipsModule} from '@angular/material/chips';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatDialogModule } from '@angular/material/dialog';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatBadgeModule} from '@angular/material/badge';
 
 import { SupplierRoutingModule } from './supplier-routing.module';
 import { SupplierComponent } from './supplier.component';
@@ -29,6 +32,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { UpdateProductComponent } from './Components/update-product/update-product.component';
 import { UpdateProfileComponent } from './Components/update-profile/update-profile.component';
 import { UpdatePasswordComponent } from './Components/update-password/update-password.component';
+import { NotifierComponent } from './Components/notifier/notifier.component';
 
 
 @NgModule({
@@ -37,7 +41,6 @@ import { UpdatePasswordComponent } from './Components/update-password/update-pas
     NavbarComponent,
     DashboardComponent,
     RegisterComponent,
-    ProductsListComponent,
     NewProductComponent,
     ProfileComponent,
     PendingOrdersComponent,
@@ -45,6 +48,8 @@ import { UpdatePasswordComponent } from './Components/update-password/update-pas
     UpdateProductComponent,
     UpdateProfileComponent,
     UpdatePasswordComponent,
+    NotifierComponent,
+    ProductsListComponent
   ],
   imports: [
     CommonModule,
@@ -64,7 +69,10 @@ import { UpdatePasswordComponent } from './Components/update-password/update-pas
     MatMenuModule,
     FormsModule,
     MatChipsModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatDialogModule,
+    MatSnackBarModule,
+    MatBadgeModule
   ]
 })
 export class SupplierModule { }

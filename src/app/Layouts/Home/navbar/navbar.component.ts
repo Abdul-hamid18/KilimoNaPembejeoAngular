@@ -9,13 +9,18 @@ import { map, shareReplay } from 'rxjs/operators';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
+  public visible = false;
 
-  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
-    .pipe(
-      map(result => result.matches),
-      shareReplay()
-    );
+  toggleLiveDemo() {
+    this.visible = !this.visible;
+  }
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  handleLiveDemoChange(event: any) {
+    this.visible = event;
+  }
 
+
+  constructor() {}
+
+ 
 }
