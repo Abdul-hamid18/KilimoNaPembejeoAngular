@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Observable } from 'rxjs';
-import { map, shareReplay } from 'rxjs/operators';
+import { Observable, Subject } from 'rxjs';
+import { debounceTime, map, shareReplay } from 'rxjs/operators';
+import { NgbAlert, NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-navbar',
@@ -9,18 +10,24 @@ import { map, shareReplay } from 'rxjs/operators';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-  public visible = false;
+  private _success = new Subject<string>();
 
-  toggleLiveDemo() {
-    this.visible = !this.visible;
+  staticAlertClosed = false;
+  successMessage = '';
+
+  @ViewChild('staticAlert', {static: false}) staticAlert!: NgbAlert;
+  @ViewChild('selfClosingAlert', {static: false}) selfClosingAlert!: NgbAlert;
+
+  ngOnInit(): void {
+    setTimeout(() => this.staticAlert.close(), 5000);
+
+    this._success.subscribe(message => this.successMessage = message);
+    this._success.pipe(debounceTime(5000)).subscribe(() => {
+      if (this.selfClosingAlert) {
+        this.selfClosingAlert.close();
+      }
+    });
   }
 
-  handleLiveDemoChange(event: any) {
-    this.visible = event;
-  }
-
-
-  constructor() {}
-
- 
+  public changeSuccessMessage() { this._success.next(`Message successfully changed.`); }
 }

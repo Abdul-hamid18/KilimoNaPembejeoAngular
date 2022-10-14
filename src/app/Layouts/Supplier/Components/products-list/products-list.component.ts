@@ -1,14 +1,13 @@
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
-import { MatPaginator } from '@angular/material/paginator';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
+import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { ProductService } from 'src/app/Layouts/Supplier/Services/Product/product.service';
 import { Products } from '../../Services/Product/Products';
-import { NewProductComponent } from '../new-product/new-product.component';
 import { NotifierComponent } from '../notifier/notifier.component';
-import { UpdateProductComponent } from '../update-product/update-product.component';
 
 
 @Component({
@@ -17,40 +16,64 @@ import { UpdateProductComponent } from '../update-product/update-product.compone
   templateUrl:  './products-list.component.html',
 })
 export class ProductsListComponent implements OnInit {
+  
   displayedColumns: string[]=['No.', 'Product Name', 'Product Price','Category', 'Product Description', 'Actions']
   dataSource = new MatTableDataSource();
   products!: Products[]
 
   durationInSeconds = 5;
 
+  hide = true;
+
+
+  productForm: FormGroup = new FormGroup({
+    supplierId: new FormControl(localStorage.getItem("SuplierId")),
+    productId: new FormControl(0, [Validators.required]),
+    productName: new FormControl("", [Validators.required]),
+    productDescr: new FormControl("", [Validators.required]),
+    productPrice: new FormControl("", [Validators.required]),
+    category: new FormControl("")
+  });
+
+  updateForm: FormGroup = new FormGroup({
+    supplierId: new FormControl(localStorage.getItem("SuplierId")),
+    productName: new FormControl("", [Validators.required]),
+    productDescr: new FormControl("", [Validators.required]),
+    productPrice: new FormControl("", [Validators.required]),
+    category: new FormControl("", [Validators.required])
+  });
 
 
 
-  @ViewChild (MatPaginator) paginator!:MatPaginator;
+
 
   constructor(private productService:ProductService, private router: Router,
-    public dialog: MatDialog,private _snackBar: MatSnackBar, ) { }
+    public dialog: MatDialog,private _snackBar: MatSnackBar,
+    config: NgbModalConfig, private modalService: NgbModal) {
+       // customize default values of modals used by this component tree
+    config.backdrop = 'static';
+    config.keyboard = false;
+     }
 
   ngOnInit(): void {
     this.fetchProducts()
-    this.dataSource.paginator = this.paginator;
   }
- 
+
 
   fetchProducts(){
     this.productService.getProducts(localStorage.getItem("SuplierId")).subscribe(response=>{
       this.dataSource=new MatTableDataSource(response)
       this.products=response
-      console.log(this.dataSource)
+      
     });
   }
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
-    }
+    // if (this.dataSource.paginator) {
+    //   this.dataSource.paginator.firstPage();
+    // }
   }
 
   deleteProduct(product:any){
@@ -65,14 +88,58 @@ export class ProductsListComponent implements OnInit {
     });
   }
 
-  public updateProduct(id:number){
-    this.router.navigate(['supplier-login/nav/update-product',{id}]);
 
+
+
+
+  openToSave(addForm: any) {
+    this.modalService.open(addForm)
   }
 
-  openDialog() {
-    this.dialog.open(NewProductComponent);
+  openToEdit(editForm: any) {
+    this.modalService.open(editForm)
   }
+
+  openSm(deleteModal: any) {
+    this.modalService.open(deleteModal, { size: 'sm', modalDialogClass: 'danger-modal' });
+  }
+
+
+
+
+
+  saveNewProduct() {
+    this.productService.newProduct(this.productForm.value).subscribe(response => {
+      alert("Pembejeo yako imesajiliwa kikamilifu");
+      this.productForm.reset()
+      this.fetchProducts();
+
+    }, error => {
+      alert("Pembejeo yako imeshindwa kusajiliwa");
+      this.fetchProducts();
+    })
+  }
+
+  editProduct(product:Products){
+    this.updateForm=new FormGroup({
+    supplierId: new FormControl(localStorage.getItem("SuplierId")),
+    productId: new FormControl(product.productId, [Validators.required]),
+    productName: new FormControl(product.productName, [Validators.required]),
+    productDescr: new FormControl(product.productDescr, [Validators.required]),
+    productPrice: new FormControl(product.productPrice, [Validators.required]),
+    category: new FormControl(product.category, [Validators.required])
+    });
+  }
+
+  updateProduct(){
+    this.productService.updateProduct(this.updateForm.controls["productId"].value,this.updateForm.value).subscribe(response=>{
+      this.fetchProducts();
+      alert("Owner has been update");
+    },error=>{
+      alert("Fail to update new owner");
+    })
+  };
+
 
   
 

@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -21,6 +22,8 @@ import {MatChipsModule} from '@angular/material/chips';
 import { NavbarComponent } from './Layouts/Home/navbar/navbar.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -50,6 +53,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatChipsModule,
     LayoutModule,
     MatToolbarModule,
+    NgbModalModule,
+    NgbAlertModule
   ],
 
   providers: [],

@@ -92,3 +92,23 @@
     font-weight: 600;
     color: #40454a;
 }
+.example-width {
+    width: 97%;
+  }
+
+  .example-part-width{
+    width: 48%;
+  }
+
+  mat-form-field {
+    margin-left: 8px;
+  }
+  a{
+    color: rgba(0, 0, 139, 0.835);
+  }
+
+  #infobtn{
+    margin-bottom: 8px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }

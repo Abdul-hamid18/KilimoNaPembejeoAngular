@@ -35,8 +35,10 @@ export class AdminNavComponent implements OnInit {
 
   logOut(){
     this.router.navigate(['/admin-login'])
-    localStorage.setItem("AdminId",JSON.stringify(""));
+    localStorage.setItem("AdminId",JSON.stringify(null));
   }
+
+  
 
 
 

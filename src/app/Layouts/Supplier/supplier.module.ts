@@ -15,6 +15,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatDialogModule } from '@angular/material/dialog';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatBadgeModule} from '@angular/material/badge';
+import { MatOptionModule } from '@angular/material/core';
+import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { SupplierRoutingModule } from './supplier-routing.module';
 import { SupplierComponent } from './supplier.component';
@@ -22,16 +24,12 @@ import { NavbarComponent } from './Components/navbar/navbar.component';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { RegisterComponent } from './Components/register/register.component';
 import { ProductsListComponent } from './Components/products-list/products-list.component';
-import { NewProductComponent } from './Components/new-product/new-product.component';
 import { ProfileComponent } from './Components/profile/profile.component';
 import { SupplierLoginComponent } from './Components/supplier-login/supplier-login.component';
 import { PendingOrdersComponent } from './Components/pending-orders/pending-orders.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
-import { UpdateProductComponent } from './Components/update-product/update-product.component';
-import { UpdateProfileComponent } from './Components/update-profile/update-profile.component';
-import { UpdatePasswordComponent } from './Components/update-password/update-password.component';
 import { NotifierComponent } from './Components/notifier/notifier.component';
 
 
@@ -41,13 +39,9 @@ import { NotifierComponent } from './Components/notifier/notifier.component';
     NavbarComponent,
     DashboardComponent,
     RegisterComponent,
-    NewProductComponent,
     ProfileComponent,
     PendingOrdersComponent,
     SupplierLoginComponent,
-    UpdateProductComponent,
-    UpdateProfileComponent,
-    UpdatePasswordComponent,
     NotifierComponent,
     ProductsListComponent
   ],
@@ -72,7 +66,9 @@ import { NotifierComponent } from './Components/notifier/notifier.component';
     MatToolbarModule,
     MatDialogModule,
     MatSnackBarModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatOptionModule,
+    NgbPaginationModule
   ]
 })
 export class SupplierModule { }

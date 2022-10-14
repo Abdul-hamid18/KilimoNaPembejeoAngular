@@ -25,17 +25,12 @@ export class NavbarComponent implements OnInit {
    }
 
   ngOnInit(): void { 
-    this.fetchProfile()
   }
-   fetchProfile(){
-    this.profileService.getProfile(localStorage.getItem("SuplierId")).subscribe(response=>{
-     this.profile=response
-    });
-  }
+   
 
   logOut(){
     this.router.navigate(['/supplier-login'])
-    localStorage.setItem("SuplierId",JSON.stringify(""));
+    localStorage.setItem("SuplierId",JSON.stringify(null));
   }
 
 
