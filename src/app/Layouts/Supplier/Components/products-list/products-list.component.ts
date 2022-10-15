@@ -111,8 +111,8 @@ export class ProductsListComponent implements OnInit {
   saveNewProduct() {
     this.productService.newProduct(this.productForm.value).subscribe(response => {
       alert("Pembejeo yako imesajiliwa kikamilifu");
-      this.productForm.reset()
       this.fetchProducts();
+
 
     }, error => {
       alert("Pembejeo yako imeshindwa kusajiliwa");

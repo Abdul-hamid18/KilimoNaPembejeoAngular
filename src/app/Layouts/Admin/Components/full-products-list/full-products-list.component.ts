@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { FullProductsService } from '../../Services/FullProducts/full-products.service';
 
 @Component({
@@ -15,7 +16,11 @@ export class FullProductsListComponent implements OnInit {
 
   @ViewChild (MatPaginator) paginator!:MatPaginator;
 
-  constructor(private productSerice:FullProductsService) { }
+  constructor(private productSerice:FullProductsService,config: NgbModalConfig,
+     private modalService: NgbModal) { 
+    config.backdrop = 'static';
+  config.keyboard = false;
+  }
 
   ngOnInit(): void {
     this.fetchProducts()
@@ -44,11 +49,16 @@ export class FullProductsListComponent implements OnInit {
   deleteProduct(product:any){
     this.productSerice.deleteProduct(product.productId).subscribe(response=>{
       this.fetchProducts();
-      alert("Product has been deleted");
+      alert("Pembejeo Imefutwa Kikamilifu");
     },error=>{
       this.fetchProducts();
-      alert("Fail to delete product");
+      alert("Pembejeo Imeshindwa Kufutwa");
     })
   }
+
+  openSm(deleteModal: any) {
+    this.modalService.open(deleteModal, { size: 'sm', modalDialogClass: 'danger-modal' });
+  }
+
 
 }

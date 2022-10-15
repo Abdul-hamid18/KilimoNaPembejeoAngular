@@ -57,13 +57,35 @@
                 <th mat-header-cell *matHeaderCellDef> Hatua </th>
                 <td mat-cell *matCellDef="let element"> 
                   <div class="sb-nav-link-icon">
-                    <button class="delete-button" (click)="deleteProduct(element)">
-                      <i style="padding: 4px;"class="fas fa-trash"></i>
+                    <button class="update-button" title="Sahihisha">
+                      <mat-icon>edit</mat-icon>
                     </button>
-                    <button class="update-button">
-                      <i style="padding: 4px;" class="fas fa-edit"></i>
+                    <button class="delete-button" (click)="openSm(deleteModal)"  title="Futa">
+                      <mat-icon>delete_forever</mat-icon>
                     </button>
                   </div>
+                  <ng-template #deleteModal let-modal>
+                    <div class="modal-header">
+                      <h4 class="modal-title">Uthibitisho wa Kufuta Pembejeo</h4>
+                      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+                    </div>
+                    <div class="modal-body">
+                      <p>Una uhakika wa kumfuta "<strong>{{element.productName}}</strong>" ?</p>
+                      <span style="font-size: smaller; color:red;">Kitendo hiki hakiwezi kutenduliwa</span>
+  
+                    </div>
+                    <div class="modal-footer">
+                      <div>
+                        <button mat-raised-button color="accent" (click)="deleteProduct(element)"
+                       (click)="modal.close('Close click')">Ndio</button>
+                      </div>
+                       <div>
+                        <button mat-raised-button color="primary" 
+                       (click)="modal.close('Close click')">Hapana</button>
+                       </div>
+                    </div>
+                  </ng-template>
+                  
   
                 </td>
               </ng-container>

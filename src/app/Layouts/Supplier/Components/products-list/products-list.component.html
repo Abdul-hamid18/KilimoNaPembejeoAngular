@@ -69,15 +69,19 @@
                     <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
                   </div>
                   <div class="modal-body">
-                    <p>Una uhakika unataka kufuta <strong>{{element.productName}}</strong> ?</p>
+                    <p>Una uhakika wa kufuta "<strong>{{element.productName}}</strong>" ?</p>
                     <span style="font-size: smaller; color:red;">Kitendo hiki hakiwezi kutenduliwa</span>
 
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" (click)="deleteProduct(element)"
+                    <div>
+                      <button mat-raised-button color="accent" (click)="deleteProduct(element)"
                      (click)="modal.close('Close click')">Ndio</button>
-                     <button type="button" class="btn btn-success" 
+                    </div>
+                     <div>
+                      <button mat-raised-button color="primary" 
                      (click)="modal.close('Close click')">Hapana</button>
+                     </div>
                   </div>
                 </ng-template>
                 
@@ -132,8 +136,10 @@
               <mat-option value="Dawa za Mifugo">Dawa za Mifugo</mat-option>
               <mat-option value="Dawa za Mimea">Dawa za Mimea</mat-option>
               <mat-option value="Vyakula vya Mifugo">Vyakula vya Mifugo</mat-option>
-              <mat-option value="Dawa za Mimea">Dawa za Mimea</mat-option>
               <mat-option value="Mbolea">Mbolea</mat-option>
+              <mat-option value="Vifaa kwa Mifugo">Vifaa kwa Mifugo</mat-option>
+              <mat-option value="Vifaa vya Kilimo">Vifaa vya Kilimo</mat-option>
+
           </mat-select>
           <mat-error>
               Tafadhali Chagua Kategori ya Mkulima
@@ -186,8 +192,10 @@
             <mat-option value="Dawa za Mifugo">Dawa za Mifugo</mat-option>
             <mat-option value="Dawa za Mimea">Dawa za Mimea</mat-option>
             <mat-option value="Vyakula vya Mifugo">Vyakula vya Mifugo</mat-option>
-            <mat-option value="Vifaa vya ">Vifaa vya Kilimo</mat-option>
             <mat-option value="Mbolea">Mbolea</mat-option>
+            <mat-option value="Vifaa kwa Mifugo">Vifaa kwa Mifugo</mat-option>
+            <mat-option value="Vifaa vya Kilimo">Vifaa vya Kilimo</mat-option>
+
           </mat-select>
           <mat-error>
               Tafadhali Chagua Kategori ya Mkulima

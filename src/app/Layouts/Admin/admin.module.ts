@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -58,7 +59,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatListModule,
     MatMenuModule,
     MatToolbarModule,
-    MatDialogModule
+    MatDialogModule,
+    NgbModalModule
 
 
   ]
