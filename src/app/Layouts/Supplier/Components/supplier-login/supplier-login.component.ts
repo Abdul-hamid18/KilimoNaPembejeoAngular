@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 import { SupplierLoginService } from '../../Services/SupllierLogin/supplier-login.service';
 
 @Component({
@@ -34,11 +35,17 @@ export class SupplierLoginComponent implements OnInit {
       this.myId=response
       localStorage.setItem("SuplierId",JSON.stringify(this.myId.supplierId));
       this.router.navigate(['/supplier-login/nav'])
-      alert("Umefanikiwa kuingia");
+      Swal.fire('Hongera', 'Umefanikiwa Kuingia!', 'success');
 
     }, error => {
-      alert("Imeshindikanwa kuingizwa! \nUmekosea barua pepe au neno la siri");
+      Swal.fire({  
+        icon: 'error',  
+        title: 'Imeshindikanwa kuingizwa!',  
+        text: 'Umekosea barua pepe au neno la siri!',  
+      })
     })
   };
+
+  
 
 }

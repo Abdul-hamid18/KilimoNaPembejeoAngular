@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Farmers } from '../../Services/FarmersServices/farmers';
+import { Farmers } from '../../Services/FarmersServices/Farmers';
 import { FarmersService } from '../../Services/FarmersServices/farmers.service';
 import { FullProductsService } from '../../Services/FullProducts/full-products.service';
 import { FullProducts } from '../../Services/FullProducts/FullProducts';
@@ -28,8 +28,7 @@ export class AdminDashboardComponent implements OnInit {
 
   fetchFarmers() {
     this.farmersService.getFarmers().subscribe(response => {
-      this.farmers = response
-      console.log(this.farmers)
+      this.farmers=response
     });
   }
 

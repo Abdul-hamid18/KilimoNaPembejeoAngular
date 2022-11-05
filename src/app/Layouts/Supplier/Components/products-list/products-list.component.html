@@ -58,12 +58,12 @@
                   (click)="editProduct(element)" title="Sahihisha">
                     <mat-icon>edit</mat-icon>
                   </button>
-                  <button class="delete-button" (click)="openSm(deleteModal)"  title="Futa">
+                  <button class="delete-button" (click)="deleteProduct(element)"  title="Futa">
                     <mat-icon>delete_forever</mat-icon>
                   </button>
                 </div>
 
-                <ng-template #deleteModal let-modal>
+                <!-- <ng-template #deleteModal let-modal>
                   <div class="modal-header">
                     <h4 class="modal-title">Uthibitisho wa Kufuta Pembejeo</h4>
                     <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
@@ -83,7 +83,7 @@
                      (click)="modal.close('Close click')">Hapana</button>
                      </div>
                   </div>
-                </ng-template>
+                </ng-template> -->
                 
 
 
@@ -119,7 +119,7 @@
     <form class="example-form" [formGroup]="productForm" (ngSubmit)="saveNewProduct()">
       <mat-form-field class="example-part-width" appearance="fill">
           <mat-label>Jina la Pembejeo</mat-label>
-          <input matInput formControlName="productName">
+          <input matInput formControlName="productName" required="">
           <mat-error>Tafadhali jaza jina la Pembejeo</mat-error>
       </mat-form-field>
 
@@ -155,7 +155,7 @@
 
       <div class="register-button">
           <button type="submit" mat-raised-button
-           color="primary" (click)="modal.close()" [disabled]="productForm.invalid">Sajili</button>
+           color="primary" (click)="modal.close()" >Sajili</button>
       </div>
 
   </form>

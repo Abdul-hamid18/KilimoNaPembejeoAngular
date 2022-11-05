@@ -5,7 +5,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
-import { Farmers } from '../../Services/FarmersServices/farmers';
+import { Farmers } from '../../Services/FarmersServices/Farmers';
 import { FarmersService } from '../../Services/FarmersServices/farmers.service';
 import { RegisterFarmerComponent } from '../register-farmer/register-farmer.component';
 
